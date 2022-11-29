@@ -7,7 +7,7 @@ Game Snake written in C++(用C++写的贪吃蛇小游戏)
 
 - 🌱Code comments are very detailed, should be relatively easy to understand.
 
-- Flash screen problem has been found where the problem is, cleardevice() function used once will flash a screen. The faster the speed of the rapid mode is, the more times the cleardevice() function is used and the more serious the flicker is. 
+- Flash screen problem has been found where the problem is, cleardevice() function used once will flash a screen. The faster the speed of the rapid mode is, the more times the cleardevice() function is used and the more severe the flicker is. 
 
 - 🔭这个游戏是基于easyX图形库，在Visual Studio 2019上用C++写的，目前有三种游戏模式。
 
