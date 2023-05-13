@@ -1,13 +1,14 @@
 /*这样就可以取消 Unicode 编码的宏定义，让整个项目以 MBCS 编码编译。
 因为用outtextxy时遇到了“2个重载中没有一个可以转化为所有参数类型”问题*/
-//#undef UNICODE
-//#undef _UNICODE
-
+#undef UNICODE
+#undef _UNICODE
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <graphics.h>
 #include <conio.h>
+#include <cstring>
 //#include <tchar.h>//添加对TCHAR类型的支持，解决unicode编码格式导致outtextxy无法正常输出的问题
 
 
@@ -50,8 +51,9 @@ HWND hwnd = NULL;//Represents the main window
 
 /* key values of four directions，还有游戏模式 */
 enum MovPosition {
-    right = 72, left = 75, up = 80, down = 77,
-    one = 49, two = 50, three = 51, four = 52
+    right = 72, left = 75, up = 80, down = 77, // arrow key
+    one = 49, two = 50, three = 51, four = 52,//1,2,3,4 keyboard
+    One = 97, Two = 98, Three = 99, Four = 100//
 };
 
 void initSnake();
@@ -89,11 +91,12 @@ int main()
         initFood();//初始化食物
         Game_Mode = 0;//默认为0，不代表任何模式
         int input = 0;//存储用户按键的值
+
         while (_kbhit())//只有按键时才有反馈
         {
             keyDown();//按键
         }
-
+        //Game_Mode = 1;
         if (Game_Mode == 4)
         {
             /* 游戏结束 */
@@ -298,6 +301,18 @@ void keyDown()
         Game_Mode = 3;
         break;
     case four:
+        Game_Mode = 4;
+        break;
+    case One:
+        Game_Mode = 1;
+        break;
+    case Two:
+        Game_Mode = 2;
+        break;
+    case Three:
+        Game_Mode = 3;
+        break;
+    case Four:
         Game_Mode = 4;
         break;
     default:
