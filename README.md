@@ -16,3 +16,5 @@ Game Snake written in C++(用C++写的贪吃蛇小游戏)
 - 🔭代码注释很详细，应该是属于比较易懂的。
 
 - 闪屏问题已经发现了问题所在，是cleardevice()函数使用一次就会闪烁一次屏幕。急速模式速度越快，cleardevice()函数使用次数越多，闪烁越严重。
+
+![Image text](snake1.png)
